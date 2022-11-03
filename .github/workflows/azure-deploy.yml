@@ -13,6 +13,8 @@ env:
   TWILIO_PHONE_IMAGE_NAME: nautilustechnologyau/transit/onebusaway-twilio-webapp
   TWILIO_SMS_APP_NAME: onebusaway-sms-webapp
   TWILIO_SMS_IMAGE_NAME: nautilustechnologyau/transit/onebusaway-sms-webapp
+  ADMIN_APP_NAME: onebusaway-admin-webapp
+  ADMIN_IMAGE_NAME: nautilustechnologyau/transit/onebusaway-admin-webapp
   SERVER_PORT: 8080
   LOCATION: 'Australia East'
 
