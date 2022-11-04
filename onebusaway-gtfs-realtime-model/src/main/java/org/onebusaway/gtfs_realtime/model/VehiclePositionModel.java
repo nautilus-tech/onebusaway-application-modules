@@ -33,14 +33,14 @@ import org.onebusaway.gtfs_realtime.interfaces.HasTripId;
 @Entity
 @Table(name = "vehicle_position")
 @org.hibernate.annotations.Table(appliesTo = "vehicle_position", indexes = {
-    @Index(name = "vp_id_idx", columnNames = {"id"}),
-    @Index(name = "vp_trip_id_idx", columnNames = {"trip_id"}),
-    @Index(name = "vp_route_id_idx", columnNames = {"route_id"}),
-    @Index(name = "vp_vehicle_id_idx", columnNames = {"vehicle_id"}),
-    @Index(name = "vp_lat_idx", columnNames = {"lat"}),
-    @Index(name = "vp_lon_idx", columnNames = {"lon"}),
-    @Index(name = "vp_stop_id_idx", columnNames = {"stop_id"}),
-    @Index(name = "vp_timestamp_idx", columnNames = {"timestamp"})})
+        @Index(name = "vp_id_idx", columnNames = {"id"}),
+        @Index(name = "vp_trip_id_idx", columnNames = {"trip_id"}),
+        @Index(name = "vp_route_id_idx", columnNames = {"route_id"}),
+        @Index(name = "vp_vehicle_id_idx", columnNames = {"vehicle_id"}),
+        @Index(name = "vp_lat_idx", columnNames = {"lat"}),
+        @Index(name = "vp_lon_idx", columnNames = {"lon"}),
+        @Index(name = "vp_stop_id_idx", columnNames = {"stop_id"}),
+        @Index(name = "vp_timestamp_idx", columnNames = {"timestamp"})})
 @org.hibernate.annotations.Entity(mutable = false)
 
 public class VehiclePositionModel implements FeedEntityModel, HasTripId, HasRouteId, HasStopId {
@@ -180,6 +180,6 @@ public class VehiclePositionModel implements FeedEntityModel, HasTripId, HasRout
 
   public String toString() {
     return "{vehicleId=" + vehicleId + " (" + lat + ", " + lon + ")" + " @"
-        + timestamp + "}";
+            + timestamp + "}";
   }
 }
