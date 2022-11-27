@@ -128,24 +128,21 @@
 	<s:param name="v"><s:property value="frontEndVersion" /></s:param>
 </s:url>
 <script type="text/javascript" src="${url}"><!-- //prevent jspx minimization --></script>
-
+	<!--
 	<script async="async"
 			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2389737821879720"
 			crossorigin="anonymous">
-		<!-- //prevent jspx minimization -->
 	</script>
-	<!-- Google tag (gtag.js) - Google Analytics -->
 	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-249276096-1">
-		<!-- //prevent jspx minimization -->
 	</script>
 	<script>
-		<!-- //prevent jspx minimization -->
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-249276096-1');
 	</script>
+	-->
 </head>
 <body>
 <div id="content" class="map">
@@ -154,9 +151,9 @@
 	    	<div id="infoBox">
 				<h1><s:property value="getText('main.headline')" /></h1>
 				<h2><s:property value="getText('main.shorttext')" /></h2>
+				<!--
 				<script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2389737821879720"
 						crossorigin="anonymous">
-					<!-- //prevent jspx minimization -->
 				</script>
 				<ins class="adsbygoogle"
 					 style="display:block;height: 200px"
@@ -164,12 +161,11 @@
 					 data-ad-slot="6011867906"
 					 data-ad-format="auto"
 					 data-full-width-responsive="true">
-					<!-- //prevent jspx minimization -->
 				</ins>
 				<script>
-					<!-- //prevent jspx minimization -->
 					(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
+				-->
 			</div>
 
 			<div id="map_header">

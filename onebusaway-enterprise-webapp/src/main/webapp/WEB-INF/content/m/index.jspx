@@ -119,23 +119,21 @@
 	  	</s:url>
   		<link rel="stylesheet" href="${url}" type="text/css" media="screen"/>
   	</s:if>
+	<!--
 	<script async="async"
 			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2389737821879720"
 			crossorigin="anonymous">
-		<!-- //prevent jspx minimization -->
 	</script>
-	<!-- Google tag (gtag.js) - Google Analytics -->
 	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-249276096-1">
-		<!-- //prevent jspx minimization -->
 	</script>
 	<script>
-		<!-- //prevent jspx minimization -->
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-249276096-1');
 	</script>
+	-->
 </head>
 
 <body>

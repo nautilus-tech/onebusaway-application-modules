@@ -19,23 +19,21 @@
     xmlns:c="http://java.sun.com/jsp/jstl/core"
     xmlns:decorator="http://www.opensymphony.com/sitemesh/decorator"
     xmlns:s="/struts-tags">
+    <!--
     <script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2389737821879720"
             crossorigin="anonymous">
-        <!-- //prevent jspx minimization -->
     </script>
-    <!-- MyMetro Web -->
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-2389737821879720"
          data-ad-slot="6670343459"
          data-ad-format="auto"
          data-full-width-responsive="true">
-        <!-- //prevent jspx minimization -->
     </ins>
     <script>
-        <!-- //prevent jspx minimization -->
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+    -->
     <s:set var="link" value="getText('main.tools.phone.link')"/>
     <s:set var="image" value="getText('main.tools.phone.image')"/>
     <a href="${link}">
