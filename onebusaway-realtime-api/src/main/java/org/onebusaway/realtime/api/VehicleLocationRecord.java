@@ -111,7 +111,7 @@ public class VehicleLocationRecord implements Serializable {
     List<TimepointPredictionRecord> timepointPredictions = r.getTimepointPredictions();
     if (timepointPredictions != null) {
       List<TimepointPredictionRecord> dup = new ArrayList<TimepointPredictionRecord>(
-          timepointPredictions.size());
+              timepointPredictions.size());
       for (TimepointPredictionRecord tpr : timepointPredictions)
         dup.add(new TimepointPredictionRecord(tpr));
       this.timepointPredictions = dup;
@@ -159,7 +159,6 @@ public class VehicleLocationRecord implements Serializable {
   }
 
   /**
-   * 
    * @return time when the vehicle location record was made, in unix-time (ms)
    */
   public long getTimeOfRecord() {
@@ -167,16 +166,14 @@ public class VehicleLocationRecord implements Serializable {
   }
 
   /**
-   * 
    * @param timeOfRecord time when the vehicle location record was made, in
-   *          unix-time (ms)
+   *                     unix-time (ms)
    */
   public void setTimeOfRecord(long timeOfRecord) {
     this.timeOfRecord = timeOfRecord;
   }
 
   /**
-   * 
    * @return time when the last vehicle location update made, in unix-time (ms)
    */
   public long getTimeOfLocationUpdate() {
@@ -195,18 +192,16 @@ public class VehicleLocationRecord implements Serializable {
   }
 
   /**
-   * 
    * @return schedule deviation, in seconds, (+deviation is late, -deviation is
-   *         early)
+   * early)
    */
   public double getScheduleDeviation() {
     return scheduleDeviation;
   }
 
   /**
-   * 
    * @param scheduleDeviation - in seconds (+deviation is late, -deviation is
-   *          early)
+   *                          early)
    */
   public void setScheduleDeviation(double scheduleDeviation) {
     this.scheduleDeviation = scheduleDeviation;
@@ -217,7 +212,6 @@ public class VehicleLocationRecord implements Serializable {
   }
 
   /**
-   * 
    * @return the distance traveled along the block in meters, or NaN if not set
    */
   public double getDistanceAlongBlock() {
@@ -225,9 +219,8 @@ public class VehicleLocationRecord implements Serializable {
   }
 
   /**
-   * 
    * @param distanceAlongBlock distance traveled along the block in meters, or
-   *          NaN if not set
+   *                           NaN if not set
    */
   public void setDistanceAlongBlock(double distanceAlongBlock) {
     this.distanceAlongBlock = distanceAlongBlock;
@@ -273,7 +266,7 @@ public class VehicleLocationRecord implements Serializable {
   }
 
   public void setTimepointPredictions(
-      List<TimepointPredictionRecord> timepointPredictions) {
+          List<TimepointPredictionRecord> timepointPredictions) {
     this.timepointPredictions = timepointPredictions;
   }
 
@@ -338,7 +331,7 @@ public class VehicleLocationRecord implements Serializable {
       b.append(" distanceAlongBlock=").append(distanceAlongBlock);
     if (isCurrentLocationSet())
       b.append(" currentLocation=").append(currentLocationLat).append(" ").append(
-          currentLocationLon);
+              currentLocationLon);
     if (isCurrentOrientationSet())
       b.append(" currentOrientation=").append(currentOrientation);
     if (phase != null)
@@ -351,3 +344,4 @@ public class VehicleLocationRecord implements Serializable {
     b.append(" odometer=").append(odometer);
     return b.toString();
   }
+}
