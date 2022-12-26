@@ -82,6 +82,12 @@ public class VehicleLocationRecord implements Serializable {
 
   private String status;
 
+  private float speed;
+
+  private double odometer;
+
+  private float bearing;
+
   public VehicleLocationRecord() {
 
   }
@@ -98,6 +104,9 @@ public class VehicleLocationRecord implements Serializable {
     this.serviceDate = r.serviceDate;
     this.tripId = r.tripId;
     this.vehicleId = r.vehicleId;
+    this.bearing = r.bearing;
+    this.speed = r.speed;
+    this.odometer = r.odometer;
 
     List<TimepointPredictionRecord> timepointPredictions = r.getTimepointPredictions();
     if (timepointPredictions != null) {
@@ -285,6 +294,30 @@ public class VehicleLocationRecord implements Serializable {
     this.status = status;
   }
 
+  public float getSpeed() {
+    return speed;
+  }
+
+  public void setSpeed(float speed) {
+    this.speed = speed;
+  }
+
+  public double getOdometer() {
+    return odometer;
+  }
+
+  public void setOdometer(double odometer) {
+    this.odometer = odometer;
+  }
+
+  public float getBearing() {
+    return bearing;
+  }
+
+  public void setBearing(float bearing) {
+    this.bearing = bearing;
+  }
+
   @Override
   public String toString() {
     StringBuilder b = new StringBuilder();
@@ -312,6 +345,9 @@ public class VehicleLocationRecord implements Serializable {
       b.append(" phase=").append(phase);
     if (status != null)
       b.append(" status=").append(status);
+
+    b.append(" speed=").append(speed);
+    b.append(" bearing=").append(bearing);
+    b.append(" odometer=").append(odometer);
     return b.toString();
   }
-}
