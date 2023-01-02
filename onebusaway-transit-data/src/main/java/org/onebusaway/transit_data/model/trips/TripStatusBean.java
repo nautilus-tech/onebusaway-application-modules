@@ -79,7 +79,7 @@ public final class TripStatusBean implements Serializable {
   
   private double previousStopDistanceFromVehicle;
 
-  private boolean airConditioned = Boolean.TRUE;
+  private boolean airConditioned = Boolean.FALSE;
 
   private boolean wheelchairAccessible = Boolean.FALSE;
 

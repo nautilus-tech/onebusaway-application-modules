@@ -94,7 +94,7 @@ public final class TripStatusV2Bean implements Serializable {
 
   private List<String> situationIds;
 
-  private boolean airConditioned = Boolean.TRUE;
+  private boolean airConditioned = Boolean.FALSE;
 
   private boolean wheelchairAccessible = Boolean.FALSE;
 

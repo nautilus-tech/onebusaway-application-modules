@@ -19,6 +19,8 @@ env:
   ADMIN_IMAGE_NAME: nautilustechnologyau/transit/onebusaway-admin-webapp
   ENTERPRISE_APP_NAME: onebusaway-enterprise-acta-webapp
   ENTERPRISE_IMAGE_NAME: nautilustechnologyau/transit/onebusaway-enterprise-acta-webapp
+  COMBINED_APP_NAME: onebusaway-combined-webapps
+  COMBINED_IMAGE_NAME: nautilustechnologyau/transit/onebusaway-combined-webapps
   SERVER_PORT: 8080
   LOCATION: 'Australia East'
   TIME_ZONE: 'Australia/Adelaide'
@@ -124,6 +126,13 @@ jobs:
           docker tag ${{ env.ENTERPRISE_IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.ENTERPRISE_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.ENTERPRISE_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
+      - name: Docker Build and Push - onebusaway-combined-webapps
+        if: github.event_name != 'pull_request'
+        run: |
+          docker build --build-arg VERSION=${{ env.IMAGE_TAG }} -t ${{ env.COMBINED_IMAGE_NAME }}:${{ env.IMAGE_TAG }} ./
+          docker tag ${{ env.COMBINED_IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.COMBINED_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.COMBINED_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+
       - name: Create Tag
         if: github.ref == 'refs/heads/master'
         uses: actions/github-script@v6
@@ -160,7 +169,8 @@ jobs:
             }
 
   deploy_to_dev:
-    if: github.event_name != 'pull_request'
+#    if: github.event_name != 'pull_request'
+    if: github.event_name == 'something-else'
     needs: build_and_test
 
     runs-on: ubuntu-latest

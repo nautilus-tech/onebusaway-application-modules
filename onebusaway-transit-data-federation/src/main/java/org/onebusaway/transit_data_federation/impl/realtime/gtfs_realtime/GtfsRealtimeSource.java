@@ -413,6 +413,7 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
   
   @PostConstruct
   public void start() {
+    _log.info("Creating GTFS-realtime data source for " + getAgencyIds() + "...");
     loadAgencies();
 
     _entitySource = new GtfsRealtimeEntitySource();
@@ -449,6 +450,10 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
                 + _agencyIds.size()
                 + ").  You might consider specifying the applicable agencies for your GtfsRealtimeSource.");
       }
+
+      if (_entitySource != null) {
+        _entitySource.setAgencyIds(_agencyIds);
+      }
     }
   }
   
@@ -458,6 +463,7 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
 
   @PreDestroy
   public void stop() {
+    _log.info("Destroying GTFS-realtime data source for " + getAgencyIds() + "...");
     if (_refreshTask != null) {
       _refreshTask.cancel(true);
       _refreshTask = null;
@@ -465,6 +471,7 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
   }
 
   public void refresh() throws IOException {
+    _log.info("Starting GTFS-realtime data update for " + getAgencyIds() + "...");
     if (!graphReady()) {
       _log.warn("skipping update " + getAgencyIds() + ", bundle not ready");
       return;
@@ -487,6 +494,7 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
     handleUpdates(result, tripUpdates, vehiclePositions, alerts, alertCollection);
     // update reference in a thread safe manner
     _monitoredResult = result;
+    _log.info("GTFS-realtime data update completed for " + getAgencyIds());
   }
 
   private ServiceAlerts.ServiceAlertsCollection readOrReturnDefaultCollection(URL alertCollectionUrl) throws IOException {
@@ -1203,6 +1211,8 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
       try {
         if (_enabled) {
           refresh();
+        } else {
+          _log.warn("GTFS-realtime data sources is not enabled for " + _agencyIds);
         }
       } catch (Throwable ex) {
         _log.warn("Error updating from GTFS-realtime data sources", ex);

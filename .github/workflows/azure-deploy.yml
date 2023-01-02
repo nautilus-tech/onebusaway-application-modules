@@ -23,6 +23,7 @@ env:
 
 jobs:
   deploy_to_azure:
+    if: github.event_name == 'something-else'
     runs-on: ubuntu-latest
 
     steps:

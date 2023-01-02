@@ -9,7 +9,7 @@ public class TfnswVehicleDescriptorRecord implements Serializable {
 
     private AgencyAndId vehicleId;
 
-    private boolean airConditioned = Boolean.TRUE;
+    private boolean airConditioned = Boolean.FALSE;
 
     private boolean wheelchairAccessible = Boolean.FALSE;
 

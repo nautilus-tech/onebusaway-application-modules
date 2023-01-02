@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class TfnswVehicleDescriptorBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private boolean airConditioned = Boolean.TRUE;
+    private boolean airConditioned = Boolean.FALSE;
 
     private boolean wheelchairAccessible = Boolean.FALSE;
 
